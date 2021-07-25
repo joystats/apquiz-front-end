@@ -1,38 +1,65 @@
-.App {
-  text-align: center;
+h1,h2,h3,h4{margin:0px;padding:0px;}
+/*ap quiz gallery*/
+.picsum-container{
+    padding: 4% 4%;
+    background: #efefef;
+    clear: both;
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.picsum-150{
+    height: 150px;
+    margin: 4px;
+}
+.clear:after{
+    content: '';
+    clear: both;
+    display: table;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/*ap quiz header*/
+.ap-header{
+    background: #fff;
+    width:100%;
+    position: fixed;
+    box-shadow: 0px 0px 10px #ccc;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.ap-header .ap-nav-left{
+    margin: 0 20px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.ap-header .ap-nav-right{
+    display: flex;
+    list-style: none;
+    align-items: center;
+    
 }
-
-.App-link {
-  color: #61dafb;
+.ap-header .ap-nav-right li{
+    padding:0 5px;
 }
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.ap-header .ap-nav-right li a{
+    text-decoration: none;
+    display: block;
+    padding:5px 10px;
+    color:#333;
+    border-radius: 4px;
 }
+.ap-header .ap-nav-right li a:not(.active):hover{
+    background:#999;
+    color:#fff;
+}
+.ap-header .ap-nav-right li a.active{
+    background: #333;
+    color:#fff;
+}
+.ap-body{
+    padding:20px;
+    padding-top:100px;
+}
+.input{margin:2px;border:1px solid #ccc;padding:5px;border-radius: 4px;}
+.button{margin:2px;}
+.result{font-weight: bold;}
