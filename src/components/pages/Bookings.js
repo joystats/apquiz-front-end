@@ -16,13 +16,14 @@ const Bookings = ()=>{
 
     const getBookingsForWeek = (roomId, weekNo) => {
         return dataBooking.filter((item)=>{
-            return roomId === item.roomId && (weekNo === moment(item.startTime).isoWeek() || 
-            weekNo === moment(item.endTime).isoWeek())
+            return roomId === item.roomId && (weekNo === moment(item.startTime).week() || 
+            weekNo === moment(item.endTime).week())
         })
     } 
 
     const checkBookingForWeek = (dateCheck)=>{
-        const bookedWeek = getBookingsForWeek(roomId, moment(dateCheck).isoWeek())
+        console.log(moment(dateCheck).week())
+        const bookedWeek = getBookingsForWeek(roomId, moment(dateCheck).week())
         setRooms(bookedWeek)
     }
 
