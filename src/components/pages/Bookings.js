@@ -16,14 +16,17 @@ const Bookings = ()=>{
 
     const getBookingsForWeek = (roomId, weekNo) => {
         return dataBooking.filter((item)=>{
-            return roomId === item.roomId && (weekNo === moment(item.startTime).week() || 
-            weekNo === moment(item.endTime).week())
+            
+            //console.log(item.startTime, moment(item.startTime).isoWeek())
+            //console.log(item.endTime, moment(item.endTime).isoWeek())
+            console.log(weekNo)
+            return roomId === item.roomId && (weekNo === moment(item.startTime).isoWeek() || 
+            weekNo === moment(item.endTime).isoWeek())
         })
     } 
 
     const checkBookingForWeek = (dateCheck)=>{
-        console.log(moment(dateCheck).week())
-        const bookedWeek = getBookingsForWeek(roomId, moment(dateCheck).week())
+        const bookedWeek = getBookingsForWeek(roomId, moment(dateCheck).isoWeek())
         setRooms(bookedWeek)
     }
 
@@ -56,7 +59,7 @@ const Bookings = ()=>{
                         Week 36	September 2, 2019	September 8, 2019
                         </td>
                         <td>
-                            <button onClick={()=>checkBookingForWeek('2021-09-02')}>check</button>
+                            <button onClick={()=>checkBookingForWeek('2019-09-02')}>check</button>
                         </td>
                     </tr>
                     <tr>
@@ -64,7 +67,7 @@ const Bookings = ()=>{
                         Week 37	September 9, 2019	September 15, 2019
                         </td>
                         <td>
-                            <button onClick={()=>checkBookingForWeek('2021-09-09')}>check</button>
+                            <button onClick={()=>checkBookingForWeek('2019-09-09')}>check</button>
                         </td>
                     </tr>
                     <tr>
@@ -72,7 +75,7 @@ const Bookings = ()=>{
                         Week 38	September 16, 2019	September 22, 2019
                         </td>
                         <td>
-                            <button onClick={()=>checkBookingForWeek('2021-09-16')}>check</button>
+                            <button onClick={()=>checkBookingForWeek('2019-09-16')}>check</button>
                         </td>
                     </tr>
                     <tr>
@@ -80,7 +83,7 @@ const Bookings = ()=>{
                         Week 39	September 23, 2019	September 29, 2019
                         </td>
                         <td>
-                            <button onClick={()=>checkBookingForWeek('2021-09-23')}>check</button>
+                            <button onClick={()=>checkBookingForWeek('2019-09-23')}>check</button>
                         </td>
                     </tr>
                     <tr>
@@ -88,7 +91,7 @@ const Bookings = ()=>{
                         Week 40	September 30, 2019	October 6, 2019
                         </td>
                         <td>
-                            <button onClick={()=>checkBookingForWeek('2021-09-30')}>check</button>
+                            <button onClick={()=>checkBookingForWeek('2019-09-30')}>check</button>
                         </td>
                     </tr>
                     <tr>
@@ -96,7 +99,7 @@ const Bookings = ()=>{
                         Week 41	October 7, 2019	October 13, 2019
                         </td>
                         <td>
-                            <button onClick={()=>checkBookingForWeek('2021-10-07')}>check</button>
+                            <button onClick={()=>checkBookingForWeek('2019-10-07')}>check</button>
                         </td>
                     </tr>
                 </tbody>
